@@ -50,22 +50,20 @@ function menuAnimation() {
     y: 0,
     duration: 0.5,
     ease: "ease"
-  }, "equal")
-
-  tl.from(".menu-items ul li", {
-    duration: 0.3,
-    stagger: 0.3,
-    opacity: 0,
-    ease: "ease"
   })
+
+  tl.from(".menu-items ul li a", {
+    duration: 0.3,
+    y: 50,
+  }, "same")
 
   tl.from(".menu-bottom-left a", {
     duration: 0.2,
-    y: -20,
+    y: 20,
     stagger: 0.2,
     opacity: 0,
     ease: "ease"
-  })
+  }, "same")
 
   tl.pause();
 
@@ -93,21 +91,21 @@ function page2Animation() {
   gsap.to("#page2 .question h1", {
     display: "none",
     opacity: 0,
-    duration: 1,
+    duration: 0.5,
     scrollTrigger: {
       trigger: "#page2 .question h1",
       scroller: "body",
-      start: "top 50%"
+      start: "top 60%"
     }
   })
   gsap.from("#page2 .about-me", {
     opacity: 0,
-    delay: 2,
+    delay: 3,
     stagger: 0.6,
     scrollTrigger: {
       trigger: "#page2 .about-me",
       scroller: "body",
-      start: "top 50%"
+      start: "top 61%"
     }
   })
   gsap.from("#page2 .about-me .line h1", {
@@ -126,3 +124,30 @@ function page2Animation() {
 }
 
 page2Animation()
+
+
+function page3Animation(){
+  let tl = gsap.timeline();
+
+  tl.from(".page3 h1", {
+    fontSize: "20vh",
+    duration: 1.5,
+    opacity: 0,
+    border: "1px solid #101010",
+    gap: "70vh",
+    ease: "power2.out",
+    width: "100%",
+    scrollTrigger: {
+      trigger: ".page3 h1",
+      scroller: "body",
+      start: "top 70%",
+      markers: true,
+      end: "top 40%",
+      scrub: 5
+    }
+  }, "equal")
+
+  
+}
+
+page3Animation()
