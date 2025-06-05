@@ -28,7 +28,7 @@ html,
 body {
     height: 100vh;
     width: 100%;
-    background-color: #0b090a;
+    background-color: #111111;
     color: #fff;
     font-family: inter-light;
 }
@@ -37,7 +37,10 @@ body {
 nav {
     height: 10vh;
     width: 88%;
-    border-bottom: 1px solid #ffffff78;
+    background-color: #111111;
+    position: fixed;
+    z-index: 999;
+    border-bottom: 1px solid #ffffff00;
     margin-left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -55,6 +58,7 @@ nav .logo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin-top: 1vh;
 }
 
 nav .navigations ul {
@@ -74,6 +78,11 @@ nav .navigations ul li a {
     font-size: 2vh;
     font-weight: 600;
     text-decoration: none;
+    transition: all ease-in-out 0.3s;
+}
+
+nav .navigations ul li a:hover{
+    color: #0DA34E;
 }
 
 nav .navigations ul li a button {
@@ -216,6 +225,7 @@ nav .navigations ul li a button:hover .button-right .transition-from {
     min-height: 190vh;
     width: 100%;
     margin-top: 20vh;
+    border-bottom: 1px dashed ;
 }
 
 .about-me .about-me-upper{
@@ -313,7 +323,7 @@ nav .navigations ul li a button:hover .button-right .transition-from {
 .about-me .about-me-lower .skills-section .skills{
     background-color: #1f1f1f;
     height: 40vh;
-    width: 44vw;
+    width: 43.8vw;
     border-radius: 10px;
     padding: 4vh;
     position: relative;
@@ -360,9 +370,9 @@ nav .navigations ul li a button:hover .button-right .transition-from {
 
 /* page 3 styles */
 .page3{
-    min-height: 100vh;
+    min-height: 150vh;
     width: 100%;
-    padding: 0vh 6vw;
+    padding: 10vh 6vw;
 }
 
 .featured-projects h1{
@@ -374,4 +384,302 @@ nav .navigations ul li a button:hover .button-right .transition-from {
     width: 70%;
     font-size: 3vh;
     margin-top: 5vh;
+}
+
+.featured-projects .featured-projects-hero {
+    height: 80vh;
+    width: 100%;
+    margin-top: 10vh;
+    border-top: 1px solid #ffffff65;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.featured-projects-hero .hero-section{
+    height: 100%;
+    width: 30%;
+}
+
+.featured-projects-hero .project-card{
+    height: 100%;
+    width: 35%;
+    transition: all ease-in-out 0.3s;
+    padding: 2vh 0;
+    position: relative;
+    transition: all ease 0.4s;
+}
+
+.featured-projects-hero .aiml{
+    display: none;
+}
+
+.featured-projects-hero .project-card h1{
+    font-size: 4.8vh;
+    font-family: inter;
+}
+
+.featured-projects-hero .project-card p{
+    color: #ffffffb7;
+    font-size: 2.5vh;
+    width: 98%;
+    position: absolute;
+    top: 20vh;
+    transition: all ease-in-out 0.4s;
+}
+
+.featured-projects-hero .project-card img{
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    transition: height ease-in-out 0.4s;
+}
+
+.featured-projects-hero .project-card:hover img{
+    height: 60vh;
+}
+
+.featured-projects-hero .project-card:hover p{
+    opacity: 0;
+}
+
+.featured-projects-hero .filter-buttons{
+    width: 25%;
+}
+
+.featured-projects-hero .filter-buttons a{
+    width: 80%;
+    padding: 1vh 0;
+    display: block;
+    background-color: transparent;
+    border-bottom: 2px solid #ffffff9b;
+    font-family: inter;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+
+.featured-projects-hero .filter-buttons .button{
+    height: 8vh;
+    width: 80%;
+    background-color: #0DA34E;
+    border: none;
+    border-radius: 50px;
+    margin-top: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* transition: all ease-in-out 0.4s; */
+}
+
+.featured-projects-hero .filter-buttons .button .button-text{
+    /* background-color: yellow; */
+    height: 3vh;
+    width: 60%;
+    overflow: hidden;
+    letter-spacing: -2px;
+    will-change: transform, opacity;
+}
+
+.featured-projects-hero .filter-buttons .button .button-text .button-text-upper{
+    /* background-color: red; */
+    height: 2.5vh;
+    margin-top: 1%;
+}
+
+.featured-projects-hero .filter-buttons .button .button-text p{
+    font-size: 2.2vh;
+    width: fit-content;
+    display: inline-flex;
+    margin-top: -98%;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.featured-projects-hero .filter-buttons .button .button-text-lower {
+  pointer-events: none;
+}
+
+.featured-projects-hero .filter-buttons .button .button-arrow{
+    position: relative;
+}
+
+.featured-projects-hero .filter-buttons .button .button-arrow i{
+    font-size: 3vh;
+    position: absolute;
+    transition: all ease-in-out 0.3s;
+}
+
+.featured-projects-hero .filter-buttons .button .button-arrow .before{
+    opacity: 1;
+    transform: translate(0vh, -1.5vh);
+}
+
+.featured-projects-hero .filter-buttons .button .button-arrow .after{
+    opacity: 0;
+    transform: translate(-2.5vh, 0.5vh);
+}
+
+.featured-projects-hero .filter-buttons .button:hover .before{
+    transform: translate(1.5vh, -2.5vh);
+    opacity: 0;
+}
+
+.featured-projects-hero .filter-buttons .button:hover .after{
+    transform: translate(0.5vh, -1.5vh);
+    opacity: 1;
+}
+
+
+/* page 4 styles */
+.page4{
+    min-height: 200vh;
+    width: 100%;
+    padding: 6vw;
+}
+
+.page4-header{
+    height: 40vh;
+    width: 72.5%;
+    margin-left: 100%;
+    transform: translateX(-100%);
+}
+
+.page4 .page4-header h1{
+    font-size: 10vh;
+    font-weight: 400;
+}
+
+.page4 .page4-header p{
+    font-size: 3vh;
+}
+
+.page4-hero {
+    border-top: 1px solid #ffffffe4;
+    padding-top: 8vh;
+}
+
+.page4-hero .sections{
+    height: max-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.page4-hero .sections .hero-left{
+    width: 30%;
+}
+
+.page4-hero .sections .hero-right{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page4-hero .sections .hero-right a {
+    height: 100%;
+    width: 100%;
+    border-top: 1px solid #ffffff97;
+    padding: 5vh 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3vh;
+    color: #fff;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.page4-hero .sections .hero-right a::before{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff1a;
+    position: absolute;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: all ease-in-out 0.3s;
+}
+
+
+.page4-hero .sections .hero-right a:hover::before{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.page4-hero .one .hero-right a{
+    border: none;
+    padding-top: 0;
+}
+
+.page4-hero .one .hero-right a::before{
+    content: "";
+    height: 120%;
+}
+
+.page4-hero .sections .hero-left h1{
+    font-weight: 300;
+    color: #0DA34E;
+}
+
+.page4-hero .sections .hero-right a h2{
+    transition: all ease-in-out 0.4s;
+    font-weight: 600;
+}
+
+.page4-hero .sections .hero-right a p{
+    width: 80%;
+    transition: all ease-in-out 0.4s;
+}
+
+.page4-hero .sections .hero-right a i{
+    position: absolute;
+    top: 20%;
+    right: 0;
+    font-size: 4vh;
+    transition: all ease-in-out 0.4s;
+}
+
+.page4-hero .sections .hero-right a .after{
+    transform: translate(-1.5vh, 1.5vh);
+    opacity: 0;
+}
+
+.page4-hero .sections .hero-right a:hover .after{
+    transform: translate(0vh, 0vh);
+    opacity: 1;
+}
+
+.page4-hero .sections .hero-right a:hover .before{
+    transform: translate(1.5vh, -1.5vh);
+    opacity: 0;
+}
+
+.page4-hero .sections .hero-right a:hover h2{
+    padding-left: 1vw;
+}
+
+.page4-hero .sections .hero-right a:hover p{
+    padding-left: 1vw;
+}
+
+.page4-hero .one .hero-right a i{
+    position: absolute;
+    top: 0%;
+    right: 0;
+}
+
+.page4-hero .sections .hero-left h1{
+    margin-top: 4vh;
+}
+
+.page4-hero .one .hero-left h1{
+    margin-top: -1.5vh;
 }
