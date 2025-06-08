@@ -4,6 +4,8 @@ function locomotive(){
 const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
   smooth: true,
+  lerp: 0.02,
+  multiplier: 0.7,
 
   // for tablet smooth
   tablet: { smooth: true },
@@ -153,3 +155,54 @@ gsap.to(".button-text-lower p", {
 }
 
 featuredProjectsButton();
+
+
+function contactButton(){
+  let contactButton = document.querySelector(".contact-button")
+
+contactButton.addEventListener("mouseenter", function(){
+  gsap.to(contactButton, {
+    scale: 1.04,
+  })
+  gsap.to(".contact-button .button-text .button-text-upper p", {
+    y: -85,
+    duration: 0.4,
+    stagger: {
+      amount: 0.3
+    },
+    opacity: 0
+  })
+  gsap.to(".contact-button .button-text .button-text-lower p", {
+    y: -86,
+    duration: 0.4,
+    stagger: {
+      amount: 0.3
+    },
+    opacity: 1
+  })
+})
+
+contactButton.addEventListener("mouseleave", function(){
+  gsap.to(contactButton, {
+    scale: 1,
+  })
+  gsap.to(".contact-button .button-text .button-text-upper p", {
+    y: 0,
+    duration: 0.4,
+    stagger: {
+      amount: 0.3
+    },
+    opacity: 1
+  })
+  gsap.to(".contact-button .button-text .button-text-lower p", {
+    y: 0,
+    duration: 0.4,
+    stagger: {
+      amount: 0.3
+    },
+    opacity: 0
+  })
+})
+}
+
+contactButton();
