@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Projects</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="assets/v (4).png" type="image/x-icon">
+    <style>
+        @font-face {
+            font-family: 'inter';
+            src: url('fonts/Inter_28pt-Medium.ttf');
+        }
+
+        @font-face {
+            font-family: 'inter-thin';
+            src: url('fonts/Inter_24pt-Thin.ttf');
+        }
+
+        @font-face {
+            font-family: 'inter-light';
+            src: url('fonts/Inter_28pt-Light.ttf');
+        }
+
+        @font-face {
+            font-family: 'inter-mi';
+            src: url('fonts/Inter_18pt-MediumItalic.ttf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: #ffffff;
+            color: #fff;
+            font-family: inter-light;
+        }
+
+        /* navbar styles */
+        nav {
+            height: 10vh;
+            width: 88%;
+            background-color: #111111;
+            position: fixed;
+            z-index: 999;
+            border-bottom: 1px solid #ffffff00;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        nav .logo {
+            height: 10vh;
+            width: 14vw;
+            margin-left: -3vw;
+        }
+
+        nav .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-top: 1vh;
+        }
+
+        nav .navigations ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2vw;
+        }
+
+        nav .navigations ul li {
+            list-style: none;
+        }
+
+        nav .navigations ul li a {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 2vh;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all ease-in-out 0.3s;
+        }
+
+        nav .navigations ul li a:hover {
+            color: #0DA34E;
+        }
+
+        nav .navigations ul li a button {
+            height: 6vh;
+            width: 12vw;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-family: inter;
+            background-color: transparent;
+            padding-left: 2.5vh;
+            border: none;
+            cursor: pointer;
+        }
+
+        nav .navigations ul li a button p {
+            position: absolute;
+            z-index: 9;
+            transition: all ease-in-out 0.5s;
+            font-size: 2vh;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav .navigations ul li a button .button-right {
+            height: 100%;
+            width: 100%;
+            background-color: #0DA34E;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 2vh;
+            transform-origin: right;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: width ease-in-out 0.5s;
+            border-radius: 50px;
+        }
+
+        nav .navigations ul li a button .button-right i {
+            position: absolute;
+            font-size: 3vh;
+            color: #fff;
+            transition: all ease-in-out 0.4s;
+        }
+
+        nav .navigations ul li a button .button-right .transition-to {
+            font-weight: 700;
+            font-size: 4.5vh;
+            transform: translateX(0.8vh);
+            opacity: 0;
+        }
+
+        nav .navigations ul li a button:hover p {
+            transform: translateX(-0.5vw);
+            color: #0DA34E;
+        }
+
+        nav .navigations ul li a button:hover .button-right {
+            width: 28%;
+        }
+
+        nav .navigations ul li a button:hover .button-right .transition-to {
+            opacity: 1;
+        }
+
+        nav .navigations ul li a button:hover .button-right .transition-from {
+            opacity: 0;
+        }
+
+        .main {
+            position: relative;
+        }
+
+        /* all projects page styles */
+        .all-projects {
+            min-height: 350vh;
+            width: 100%;
+            position: relative;
+            padding-top: 40vh;
+            padding-left: 6vw;
+            padding-right: 6vw;
+            background-color: #111111;
+            overflow: hidden;
+        }
+
+        .all-projects h1 {
+            font-size: 20vh;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-family: inter;
+        }
+
+        .all-projects .all-projects-container {
+            min-height: 100vh;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            /* grid-template-rows: repeat(3, 1fr); */
+            gap: 5vh;
+            margin-top: 10vh;
+            /* background-color: red; */
+            padding-bottom: 30vh;
+        }
+
+        .all-projects-container .project {
+            height: 85vh;
+            width: 27.7vw;
+            padding: 2vh 0;
+            margin-bottom: 5vh;
+            position: relative;
+            transition: all ease 0.4s;
+            border-top: 1px solid #ffffff65;
+            padding-top: 5vh;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .all-projects-container .project h2 {
+            font-size: 4.8vh;
+            font-family: inter;
+        }
+
+        .all-projects-container .project p {
+            color: #ffffffb7;
+            font-size: 2.5vh;
+            width: 98%;
+            position: absolute;
+            top: 20vh;
+            transition: all ease-in-out 0.4s;
+        }
+
+        .all-projects-container .project p span{
+            padding: 0.5vh 1vh;
+            border-radius: 5px;
+            background-color: #0DA34E;
+            font-family: inter;
+            font-size: 2.5vh;
+        }
+
+        .all-projects-container .project img {
+            height: 30vh;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            transition: height ease-in-out 0.4s;
+        }
+
+        .all-projects-container .project .hover-video {
+            height: 30vh;
+            width: 100%;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            transition: height ease-in-out 0.4s;
+        }
+
+
+        .all-projects-container .project:hover img {
+            height: 65vh;
+        }
+
+        .all-projects-container .project:hover {
+            border-top: 1.5px solid #fff;
+        }
+
+        .contact-me {
+            min-height: 100vh;
+            width: 100%;
+            position: relative;
+            background-color: #111111;
+            margin-top: -10vh;
+        }
+
+        .contact-me .contact-header h1 {
+            padding-left: 6vw;
+            font-size: 10vh;
+            font-weight: 400;
+        }
+
+        .contact-me .contact-header p {
+            font-size: 3vh;
+            padding-left: 6vw;
+            width: 75%;
+        }
+
+        .contact-me>h3 {
+            margin-top: 13vh;
+            position: absolute;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            font-weight: 300;
+            font-size: 3vh;
+        }
+
+        .contact-me .contact-button {
+            height: 25vh;
+            width: 60%;
+            background-color: #0DA34E;
+            margin-top: 20vh;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            position: relative;
+            border-radius: 10px;
+            box-shadow: inset 10px 10px 50px #ffffff5b, inset -10px -10px 50px #ffffff5b;
+            border: none;
+        }
+
+        .contact-me .contact-button a {
+            height: 50%;
+            width: 90%;
+            /* background-color: red; */
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .contact-me .contact-button a .text {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-me .contact-button a .text p {
+            font-size: 15vh;
+            text-transform: uppercase;
+            color: #fff;
+        }
+
+        .contact-me .contact-button a .button-text-lower {
+            /* color: yellow; */
+            margin-top: 24vh;
+        }
+
+        .contact-me .contact-button a .text .space {
+            width: 4vh;
+        }
+
+        .cards-container {
+            height: 10vh;
+            width: 100%;
+            margin-top: 10vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cards-container .card {
+            height: 50vh;
+            width: 30%;
+            border-radius: 10px;
+            padding: 1%;
+            background-color: #ffffff;
+            margin-top: 25%;
+        }
+
+        .cards-container #card1 {
+            transform: rotate(-8deg);
+        }
+
+        .cards-container #card2 {
+            transform: rotate(5deg);
+        }
+
+        .cards-container #card3 {
+            transform: rotate(-10deg);
+        }
+
+        .cards-container .card img {
+            height: 90%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+
+        }
+
+
+        .all-projects-footer {
+            position: absolute;
+            width: 100%;
+            height: 5vh;
+            bottom: 0%;
+            z-index: 99;
+            background-color: #111111;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 1vh;
+            border-top: 1px solid #ffffff65;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <a href="index.html"><img src="assets/logo-opt-1.png" alt=""></a>
+        </div>
+        <div class="navigations">
+            <ul>
+                <li><a href="AllProjects.html">View Projects</a></li>
+                <li><a download="" href="assets/Vaidika Kaul - Resume.pdf">Download Resume</a></li>
+                <li><a href="https://github.com/vaidika1410">Github</a></li>
+                <li>
+                    <a href="https://www.linkedin.com/in/vaidika-kaul-321b22316/">
+                        <button>
+                            <p>Let's Connect</p>
+                            <div class="button-right">
+                                <i class="ri-pencil-fill transition-from"></i>
+                                <i class="ri-arrow-right-up-line transition-to"></i>
+                            </div>
+                        </button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="main">
+        <div class="page1-wrapper">
+            <div class="page1 all-projects">
+                <h1>All Projects</h1>
+                <div class="all-projects-container">
+                    <a href="https://vaidika1410.github.io/Team-EXIA-ReimagineRound1/" class="project">
+                        <h2>AORUS Gigabyte Landing Page Clone</h2>
+                        <p>
+                            A high-fidelity frontend clone of the official AORUS Gigabyte gaming hardware website.
+                            Focused on precision, performance, and aesthetics, this project demonstrates mastery over
+                            responsive layout, scroll-based animations, and advanced CSS effects. It reflects a
+                            pixel-perfect recreation tailored for web3-inspired UI principles.
+                            <br>
+                            <br>
+                            <span>Web3</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/Aorus Gigabyte video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="" class="project">
+                        <h2>Mech EXIA</h2>
+                        <p>
+                            Mech EXIA is an interactive vehicle maintenance learning platform designed for DIY
+                            enthusiasts,
+                            vehicle owners, and mechanics. It offers tutorials, troubleshooting guides, expert chatbot
+                            consultations, and a marketplace for tools and parts. Powered by AI, Mech EXIA simplifies
+                            diagnostics and promotes hands-on learning. The platform aims to make automotive care more
+                            accessible, engaging, and efficient.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/MECHEXIA-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="https://github.com/vaidika1410/Forest-Fire-Detection-System" class="project">
+                        <h2>Forest Fire Detection using CNN</h2>
+                        <p>
+                            A deep learning-based image classification model built to detect forest fires from satellite
+                            and
+                            drone footage in real-time.
+                            This project utilizes a custom Convolutional Neural Network trained on a Kaggle dataset to
+                            classify 'fire' and 'no fire' conditions, helping mitigate environmental disasters through
+                            early
+                            detection. The dashboard was implemented using Flask for deployment.
+                            <br><br>
+                            <span>AIML</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/ForestFireDetection-video.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="https://github.com/vaidika1410/AI-for-precision-diagnostics" class="project">
+                        <h2>AI for Precision Diagnostics</h2>
+                        <p>
+                            A lightweight diagnostic web tool powered by a Logistic Regression model to predict diabetes
+                            using clinical data.
+                            Built with accessibility in mind for rural healthcare, this tool supports multilingual
+                            chatbots,
+                            offline support, and data privacy features.
+                            <br><br>
+                            <span>AIML</span>
+                        </p>
+                        <img src="https://cdn.dribbble.com/userupload/12063574/file/original-d2d01d0bdad68195fd89b44a945d5ad5.png?resize=1504x1128&vertical=center"
+                            alt="">
+                    </a>
+                    <a href="https://vaidika1410.github.io/Pastelane-Planner/" class="project">
+                        <h2>Pastelane Planner</h2>
+                        <p>
+                            Pastelane Planner is a dreamy, pastel-themed productivity app designed to simplify your daily
+                            planning. It offers a clean, user-friendly interface with soft visuals, intuitive task
+                            management, and personalized reminders—making productivity feel calming and creative.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/Pastelane.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="https://vaidika1410.github.io/REJOUICE/" class="project">
+                        <h2>REJOUICE Clone</h2>
+                        <p>
+                            REJOUICE Clone is a high-fidelity replica of the original REJOUICE website, built to
+                            showcase advanced web animations, responsive design, and smooth scroll-based interactions.
+                            This project demonstrates my skills in modern frontend development using HTML, CSS, and
+                            JavaScript, with a strong focus on visual storytelling and user engagement.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/Rejouice.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="https://vaidika1410.github.io/TwoGoodCo./" class="project">
+                        <h2>Two Good Co. Clone</h2>
+                        <p>
+                            Two Good Co. Clone is a pixel-perfect recreation of the original brand’s website, focused on
+                            delivering a minimalist and elegant design. This project highlights my ability to implement
+                            responsive layouts, subtle transitions, and brand-consistent aesthetics using HTML, CSS, and
+                            JavaScript. It's a clean, visually rich build that reflects my eye for detail and design
+                            precision.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <video class="hover-video" muted loop>
+                            <source src="assets/TooGoodCo..mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </a>
+                    <a href="https://vaidika1410.github.io/RevenueManagementSystem/" class="project">
+                        <h2>Revenue Management System</h2>
+                        <p>
+                            A web app built during the Hack’Ndore hackathon for the Indore Municipal Corporation,
+                            designed to track and manage city-wide revenue. Developed with two teammates, it features an
+                            intuitive dashboard and area-wise revenue insights to support efficient municipal
+                            operations.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <img src="assets/Revenue-mangt-system.png" alt="">
+                    </a>
+                    <a href="" class="project">
+                        <h2>Hospital Management System</h2>
+                        <p>
+                            A web-based application built using JSP and MySQL, designed to streamline hospital
+                            operations. It includes admin and patient login portals, online appointment booking, and
+                            basic patient record management. The system ensures efficient scheduling and enhances
+                            communication between patients and hospital staff.
+                            <br><br>
+                            <span>Web3</span>
+                        </p>
+                        <img src="assets/HospitalMangtSystem.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="contact-me">
+            <!-- contact page heading -->
+            <div class="contact-header">
+                <h1>Contact me</h1>
+                <p>
+                    Want to get in touch? Whether it’s a project, opportunity, or just a quick hello — I’m always open
+                    to meaningful conversations.
+                    Feel free to drop me an email anytime!
+                </p>
+            </div>
+            <!-- email button -->
+            <h3>Have a project in mind?</h3>
+            <button class="contact-button">
+                <a href="mailto:vaidikakaul20@gmail.com" class="button-text">
+                    <div class="button-text-upper text">
+                        <p>l</p>
+                        <p>e</p>
+                        <p>t</p>
+                        <p>'</p>
+                        <p>s</p>
+                        <p class="space"></p>
+                        <p>b</p>
+                        <p>u</p>
+                        <p>i</p>
+                        <p>l</p>
+                        <p>d</p>
+                        <p class="space"></p>
+                        <p>i</p>
+                        <p>t</p>
+                    </div>
+                    <div class="button-text-lower text">
+                        <p>l</p>
+                        <p>e</p>
+                        <p>t</p>
+                        <p>'</p>
+                        <p>s</p>
+                        <p class="space"></p>
+                        <p>b</p>
+                        <p>u</p>
+                        <p>i</p>
+                        <p>l</p>
+                        <p>d</p>
+                        <p class="space"></p>
+                        <p>i</p>
+                        <p>t</p>
+                    </div>
+                </a>
+            </button>
+
+            <div class="cards-container">
+                <a href="https://www.linkedin.com/in/vaidika-kaul-321b22316/" class="card" id="card1">
+                    <img src="assets/linkedin.png" alt="linkedin screenshot">
+                    <h2>LinkedIn Profile</h2>
+                </a>
+                <a href="https://github.com/vaidika1410" class="card" id="card2">
+                    <img src="assets/github.png" alt="github screenshot">
+                    <h2>Github Profile</h2>
+                </a>
+                <a href="https://x.com/Vaidika10_" class="card" id="card3">
+                    <img src="assets/twitter.png" alt="twitter screenshot">
+                    <h2>Twitter</h2>
+                </a>
+            </div>
+        </div>
+        <!-- footer -->
+        <footer class="all-projects-footer">
+            © 2025 Vaidika Kaul. All rights reserved.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        function featuredProjectsVideo() {
+            const videos = document.querySelectorAll('.hover-video');
+
+            videos.forEach(video => {
+                video.addEventListener('mouseenter', () => {
+                    video.play();
+                });
+                video.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0; // Optional: resets video to beginning
+                });
+            });
+
+        }
+        featuredProjectsVideo();
+
+
+        function contactButton() {
+            let contactButton = document.querySelector(".contact-button")
+
+            contactButton.addEventListener("mouseenter", function () {
+                gsap.to(contactButton, {
+                    scale: 1.04,
+                })
+                gsap.to(".contact-button .button-text .button-text-upper p", {
+                    y: -85,
+                    duration: 0.4,
+                    stagger: {
+                        amount: 0.3
+                    },
+                    opacity: 0
+                })
+                gsap.to(".contact-button .button-text .button-text-lower p", {
+                    y: -86,
+                    duration: 0.4,
+                    stagger: {
+                        amount: 0.3
+                    },
+                    opacity: 1
+                })
+            })
+
+            contactButton.addEventListener("mouseleave", function () {
+                gsap.to(contactButton, {
+                    scale: 1,
+                })
+                gsap.to(".contact-button .button-text .button-text-upper p", {
+                    y: 0,
+                    duration: 0.4,
+                    stagger: {
+                        amount: 0.3
+                    },
+                    opacity: 1
+                })
+                gsap.to(".contact-button .button-text .button-text-lower p", {
+                    y: 0,
+                    duration: 0.4,
+                    stagger: {
+                        amount: 0.3
+                    },
+                    opacity: 0
+                })
+            })
+        }
+
+        contactButton();
+
+
+        function contactMeCards() {
+            let card1 = document.getElementById("card1")
+            let card2 = document.getElementById("card2")
+            let card3 = document.getElementById("card3")
+
+            card1.addEventListener("mouseenter", () => {
+                gsap.to(card1, {
+                    transform: "translateY(-40%) rotate(0deg)",
+                    ease: "power2.out",
+                })
+            })
+
+            card1.addEventListener("mouseleave", () => {
+                gsap.to(card1, {
+                    transform: "translateY(0%) rotate(-8deg)",
+                    ease: "power2.out",
+                })
+            })
+
+            card2.addEventListener("mouseenter", () => {
+                gsap.to(card2, {
+                    transform: "translateY(-40%) rotate(0deg)",
+                    ease: "power2.out",
+                })
+            })
+
+            card2.addEventListener("mouseleave", () => {
+                gsap.to(card2, {
+                    transform: "translateY(0%) rotate(5deg)",
+                    ease: "power2.out",
+                })
+            })
+
+            card3.addEventListener("mouseenter", () => {
+                gsap.to(card3, {
+                    transform: "translateY(-40%) rotate(0deg)",
+                    ease: "power2.out",
+                })
+            })
+
+            card3.addEventListener("mouseleave", () => {
+                gsap.to(card3, {
+                    transform: "translateY(0%) rotate(-10deg)",
+                    ease: "power2.out",
+                })
+            })
+        }
+
+        contactMeCards();
+
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
