@@ -328,6 +328,7 @@ nav .navigations ul li a button:hover .button-right .transition-from {
     align-items: center;
     justify-content: center;
     gap: 1vh;
+    /* flex-wrap: wrap; */
 }
 
 .about-me .about-me-lower .skills-section .skills {
@@ -465,6 +466,7 @@ nav .navigations ul li a button:hover .button-right .transition-from {
 
 .featured-projects-hero .filter-buttons {
     width: 25%;
+    font-size: 2.3vh;
 }
 
 .featured-projects-hero .filter-buttons a {
@@ -840,3 +842,241 @@ footer{
     border-top: 1px solid #ffffff65;
 }
 
+
+
+@media (max-width:1200px) {
+    nav .navigations ul #nav-button button{
+        width: 15vw;
+    }
+
+    .page1 .intro-line{
+        width: 80%;
+    }
+
+    .page2 .about-me-lower .skills-section{
+        /* background-color: #0DA34E; */
+        display: flex;
+        flex-direction: row;
+    }
+
+    .page3 .featured-projects-hero .project-card p{
+        font-size: 1rem;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button{
+        font-size: 0.5vw;
+        padding: 0.5vw 0.2vw;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-upper{
+        top: 50%;
+        position: absolute;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-lower{
+        top: 130%;
+        position: absolute;
+    }
+
+    .page4 .page4-header p{
+        font-size: 1.2rem;
+    }
+
+    .page5 .contact-button {
+        width: 80%;
+    }
+}
+
+@media (max-width: 1100px) {
+    nav .navigations ul #nav-button button{
+        width: 17vw;
+    }
+
+    .about-me .about-me-upper p{
+        scale: 0.8;
+        width: 60vw;
+        margin-left: -16vw;
+        margin-top: 5vh;
+    }
+
+    .about-me-lower .skills-section  {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button{
+        padding: 1vh;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-arrow{
+        display: none;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text{
+        /* background-color: red; */
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-upper{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-lower{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+     .page4 .page4-header p{
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    nav{
+        width: 100%;
+        padding: 0 2vw;
+    }
+
+    nav .navigations ul #nav-button button{
+        width: 19vw;
+    }
+
+    .about-me .about-me-upper h1{
+        width: max-content;
+    }
+
+    .about-me .about-me-upper p{
+        scale: 0.8;
+        width: 60vw;
+        margin-left: -16vw;
+        margin-top: 5vh;
+    }
+
+    .about-me .about-me-upper img{
+        /* scale: 0.8; */
+    }
+
+    .about-me-lower .skills-section  {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button{
+        padding: 1vh;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-arrow{
+        display: none;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text{
+        /* background-color: red; */
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-upper{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-lower{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+     .page4 .page4-header p{
+        font-size: 1rem;
+    }
+
+    .contact-me{
+        overflow: hidden;
+        height: max-content;
+    }
+
+    .contact-me .contact-button{
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 930px) {
+    nav .navigations ul #nav-button button{
+        width: 19vw;
+    }
+
+    .about-me-upper img{
+        scale: 0.8;
+    }
+
+    .about-me .about-me-upper p{
+        scale: 0.8;
+        width: 60vw;
+        margin-left: -16vw;
+        margin-top: 5vh;
+    }
+
+    .about-me-lower .skills-section  {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button{
+        padding: 1vh;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-arrow{
+        display: none;
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text{
+        /* background-color: red; */
+        width: 100%;
+        text-align: center;
+        
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-upper{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page3 .featured-projects-hero .filter-buttons .button .button-text-lower{
+        position: absolute;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .page3 .featured-projects-hero .project-card h1{
+        font-size: 3.5vh;
+    }
+
+    .page3 .featured-projects-hero .project-card p{
+        margin-top: 0vh;
+    }
+
+    .page3 .featured-projects-hero .project-card:hover img{
+        height: 70vh;
+    }
+
+     .page4 .page4-header p{
+        font-size: 1rem;
+    }
+}
