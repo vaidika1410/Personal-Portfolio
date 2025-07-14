@@ -72,7 +72,6 @@ function loader() {
 loader();
 
 
-
 function navbarAnimation() {
   gsap.to("nav", {
     // duration: 1.5,
